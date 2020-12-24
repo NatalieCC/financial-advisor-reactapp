@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Created with React.js and Redux.js displaying a responsive table chart and a donut chart per button clicked.
+
+Styled with CSS and foundation.js.
+
+Table Chart - Button value represents risk level; table chart's coresponding row will be highlighted once a button is clicked.
+
+Donut Chart - Button value represents risk level; showing the relational proportions between data.(Charts.js)
+
+The personalized portfolio component and its navigation button is under construction. 
+
 ## Available Scripts
 
 In the project directory, you can run:
