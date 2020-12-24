@@ -10,7 +10,7 @@ let allCharts = [];
 
 // retrieve charts from json data
 let jsonData = require('../src/charts.json');
-console.log(jsonData);
+
 for (let i = 0, l = jsonData.charts.length; i < l; i++) {
     let chart = jsonData.charts[i];
     allCharts.push(chart);
