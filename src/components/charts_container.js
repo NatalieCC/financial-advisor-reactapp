@@ -1,9 +1,10 @@
 import Charts from './charts.js';
 import { connect } from 'react-redux';
-import { chartChange } from '../../src/actions/donut_chart_actions';
-//import { withRouter } from 'react-router-dom';
+import { chartChange } from '../actions/donut_chart_actions';
+//import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
+    //debugger
     return {
         currentChart: state.currentChart
     };

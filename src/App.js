@@ -2,21 +2,27 @@ import React from 'react'
 import './App.css';
 import SelectRiskLevel from './components/select_risk_level';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ChartsContainer from './components/charts_container';
-import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
-import logo from './logo.svg';
-import { Router, Redirect } from 'react-router';
-
+//import ChartsContainer from '../src/components/charts_container';
 
 const App = () => (
   <div>
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={SelectRiskLevel} />
+        <Route path="/" component={composeComponents(SelectRiskLevel)} />
       </Switch>
     </BrowserRouter>
   </div>
 )
+
+const composeComponents = (...components) => {
+  return () => (
+    <div>
+      {components.map((Component, index) => (
+        <Component key={`comp-${index}`} />
+      ))}
+    </div>
+  );
+};
 
 export default App;
 
