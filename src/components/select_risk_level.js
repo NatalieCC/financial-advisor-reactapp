@@ -108,14 +108,16 @@ class SelectRiskLevel extends React.Component {
                             <Button onClick={this.showDonutChart} color={Colors.ALERT} id='toDonutBt'>View in Donut Chart</Button>
                         </div>
                         <table>
-                            <tr>
-                                <th width="80">Risk</th>
-                                <th width="80">Bonds %</th>
-                                <th width="80">Large Cap %</th>
-                                <th width="80">Mid Cap %</th>
-                                <th width="80">Foreign %</th>
-                                <th width="80">Small Cap %</th>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th width="80">Risk</th>
+                                    <th width="80">Bonds %</th>
+                                    <th width="80">Large Cap %</th>
+                                    <th width="80">Mid Cap %</th>
+                                    <th width="80">Foreign %</th>
+                                    <th width="80">Small Cap %</th>
+                                </tr>
+                            </tbody>
                             {this.displayChart()}
                         </table>
                     </div>
