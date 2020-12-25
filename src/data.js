@@ -1,5 +1,5 @@
 // define categories for the charts
-export const categories = ['Bonds % ', 'Large Cap % ', 'Mid Cap', 'Foreign % ', 'Small Cap % '];
+export const categories = ['Bonds % ', 'Large Cap % ', 'Mid Cap %', 'Foreign % ', 'Small Cap % '];
 // define background colors for each category
 export const colors = ['#E6E6FA', '#D8BFD8', '#DDA0DD', '#BA55D3', '#D14747'];  //'#EE82EE',
 // define quantity of charts
