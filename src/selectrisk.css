@@ -57,7 +57,9 @@ html, body, ul, p, h3, button {
     text-align: center;
     color:#f7e4e1;
     font-family: "Roboto", sans-serif;
-    background-color:grey;
+    /* background-color:grey; */
+    background-color: #e9bcb7;
+    background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
 }
 #risk-selector-container {
     display: flex;
@@ -179,6 +181,7 @@ html, body, ul, p, h3, button {
     cursor: pointer;
     border: 2px solid black;
     font-weight: 700;
+    margin-left: 10px;
 }
 .risk-calculator-main-row {
     position: relative;
