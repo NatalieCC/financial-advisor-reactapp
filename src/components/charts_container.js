@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { chartChange } from '../actions/donut_chart_actions';
 //import { withRouter } from 'react-router-dom'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     //debugger
     return {
-        currentChart: state.currentChart
+        currentChart: state.currentChart,
+        //buttonClicked: ownProps.buttonClicked
     };
 };
 
