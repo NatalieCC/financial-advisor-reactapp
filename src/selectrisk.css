@@ -144,7 +144,7 @@ html, body, ul, p, h3, button {
     display: flex;
     width: 720px;
 }
-#toDonutBt, #back{
+#toDonutBt{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,4 +159,49 @@ html, body, ul, p, h3, button {
     /* background-color:gray; */
     cursor: pointer;
     margin-left: 2.5%;
+}
+#back{
+    margin-left: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#donutChart {
+    width: 70%;
+    margin-left: 15%;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////// */
+
+#reba-bt{
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    font-weight: 700;
+}
+.risk-calculator-main-row {
+    position: relative;
+    /* align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    vertical-align: middle; */
+}
+.risk-calculator-main-row-box {
+    position: absolute;
+    margin-top: 8.8px;
+}
+.risk-calculator-main-row input:nth-child(1) {
+    -webkit-animation: pulse 0.7s;
+    -webkit-animation-iteration-count: 3;
+    animation: pulse 0.7s;
+    animation-iteration-count: 3;
+    outline: 0;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+.risk-calculator-main-difference {
+    text-align: left;
+}
+.risk-calculator-main-new {
+    text-align: left;
 }
