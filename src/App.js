@@ -1,14 +1,16 @@
 import React from 'react'
 import './App.css';
-import SelectRiskLevel from './components/select_risk_level';
+import TableChart from './components/table_chart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PersonalizedPortfolio from './components/personalized_portfolio';
 //import ChartsContainer from '../src/components/charts_container';
 
 const App = () => (
   <div>
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={composeComponents(SelectRiskLevel)} />
+        <Route exact path="/" component={composeComponents(TableChart)} />
+        <Route path="/calculator" component={composeComponents(PersonalizedPortfolio)} />
       </Switch>
     </BrowserRouter>
   </div>
