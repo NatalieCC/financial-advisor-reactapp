@@ -1,8 +1,8 @@
 import React from 'react';
 import DonutChart from './donut_chart';
-import { Button, ButtonGroup } from 'react-foundation';
+import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
 import { Link, withRouter } from 'react-router-dom';
-import SelectRiskLevel from './select_risk_level'
+import TableChart from './table_chart'
 
 class Charts extends React.Component {
 
@@ -20,13 +20,16 @@ class Charts extends React.Component {
 
     render() {
         if (!this.state.displayDonut) {
-            debugger
             return (
-                <SelectRiskLevel />
+                <TableChart />
             )
         } else {
+            //debugger
             return (
                 <div>
+                    <Callout color={Colors.ALERT}>
+                        <h1 id='app-title'>Financial Advisor</h1>
+                    </Callout>
                     <div id='risk-selector-container'>
                         <div id='buttons-container'>
                             <ButtonGroup onClick={(e) => {
@@ -49,12 +52,14 @@ class Charts extends React.Component {
                                     </ul>
                                 </div>
                             </ButtonGroup>
-                            <Button id='continue' >Continue</Button>
+                            {/* <Button id='continue' onClick={() => { this.props.history.push('/calculator') }}>Continue</Button> */}
                             <Button id='back' onClick={this.goBack}>Back to Table</Button>
                         </div>
                     </div>
                     <div id='donutChart'>
-                        <DonutChart currentChart={this.props.currentChart - 1} />
+                        <DonutChart
+                            currentChart={this.props.currentChart - 1}
+                        />
                     </div>
                 </div >
             );
