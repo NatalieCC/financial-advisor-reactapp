@@ -10,6 +10,8 @@ Table Chart - Button value represents risk level; table chart's coresponding row
 
 Donut Chart - Button value represents risk level; showing the relational proportions between data.(Charts.js)
 
+Personalized Portfolio - Calculations of each category are made based on user's selected risk level; the difference and new amount are displayed as the result in corresponding columns. 
+
 ## Available Scripts
 
 In the project directory, you can run:
