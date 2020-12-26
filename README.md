@@ -10,13 +10,13 @@ Table Chart - Button value represents risk level; table chart's coresponding row
 
 Donut Chart - Button value represents risk level; showing the relational proportions between data.(Charts.js)
 
-The personalized portfolio component and its navigation button is under construction. 
-
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
+
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
