@@ -44,14 +44,15 @@ class PersonalizedPortfolio extends React.Component {
         let newForeign = parseFloat((sum * this.state.foreignChosen * 0.01).toFixed(2));
         let newSmallcap = parseFloat((sum * this.state.smallcapChosen * 0.01).toFixed(2));
 
+        let diff = {
+            bondsDiff: parseFloat((newBonds - parseFloat(this.state.bondsInput)).toFixed(2)),
+            largecapDiff: parseFloat((newLargecap - parseFloat(this.state.largecapInput)).toFixed(2)),
+            midcapDiff: parseFloat((newMidcap - parseFloat(this.state.midcapInput)).toFixed(2)),
+            foreignDiff: parseFloat((newForeign - parseFloat(this.state.foreignInput)).toFixed(2)),
+            smallcapDiff: parseFloat((newSmallcap - parseFloat(this.state.smallcapInput)).toFixed(2)),
+        };
         this.setState({
-            differenceObj: {
-                bondsDiff: newBonds - this.state.bondsInput,
-                largecapDiff: newLargecap - this.state.largecapInput,
-                midcapDiff: newMidcap - this.state.midcapInput,
-                foreignDiff: newForeign - this.state.foreignInput,
-                smallcapDiff: newSmallcap - this.state.smallcapInput,
-            },
+            differenceObj: diff,
             newamountObj: {
                 newBonds: newBonds,
                 newLargecap: newLargecap,
