@@ -75,7 +75,7 @@ class TableChart extends React.Component {
         }
     }
 
-    sendInfo(bt) {
+    sendInfo() {
         this.props.history.push({
             pathname: `/calculator`,
             state: {
