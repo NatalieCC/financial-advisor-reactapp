@@ -37,13 +37,6 @@ class PersonalizedPortfolio extends React.Component {
 
 
     calculate() {
-        let sum = parseInt(this.state.bondsInput) + parseInt(this.state.largecapInput) + parseInt(this.state.midcapInput) + parseInt(this.state.foreignInput) + parseInt(this.state.smallcapInput)
-        sum = sum.toFixed(2)
-        let newBonds = sum * (this.state.bondsChosen * 0.01).toFixed(2)
-        let newLargecap = sum * (this.state.largecapChosen * 0.01).toFixed(2)
-        let newMidcap = sum * (this.state.midcapChosen * 0.01).toFixed(2)
-        let newForeign = sum * (this.state.foreignChosen * 0.01).toFixed(2)
-        let newSmallcap = sum * (this.state.smallcapChosen * 0.01).toFixed(2)
         let sum = parseFloat(this.state.bondsInput) + parseFloat(this.state.largecapInput) + parseFloat(this.state.midcapInput) + parseFloat(this.state.foreignInput) + parseFloat(this.state.smallcapInput)
         let newBonds = parseFloat((sum * this.state.bondsChosen * 0.01).toFixed(2));
         let newLargecap = parseFloat((sum * this.state.largecapChosen * 0.01).toFixed(2));
