@@ -18,6 +18,7 @@ class PersonalizedPortfolio extends React.Component {
             smallcapChosen: this.props.history.location.state.small,
             differenceObj: { Bonds: '', Largecap: '', Midcap: '', ForeignDiff: '', Smallcap: '' },
             newamountObj: { newBonds: '', newLargecap: '', newMidcap: '', newForeign: '', newSmallcap: '' },
+            displaymessage: [],
         }
         this.calculate = this.calculate.bind(this);
         this.update = this.update.bind(this);
@@ -59,7 +60,81 @@ class PersonalizedPortfolio extends React.Component {
                 newSmallcap: newSmallcap
             }
         })
+        //debugger
+        this.displayMessage(diff);
     }
+
+    displayMessage(diff) {
+        let message = [];
+        let differenceObj = diff;
+        let result = {};
+        var keys = Object.keys(differenceObj);
+        keys = keys.sort(function (a, b) { return differenceObj[a] - differenceObj[b] });
+        keys.forEach(function (k) {
+            result[k] = differenceObj[k];
+        })
+        let valueArr = Object.values(result);
+        let i = 0;
+        let j = valueArr.length - 1;
+        while (i < j) {
+            if (valueArr[i] === 0) {
+                i++
+            }
+            if (valueArr[j] === 0) {
+                j--;
+            }
+            if (i > j) break;
+            let remain = Math.round((valueArr[i] + valueArr[j]) * 100) / 100;
+            let amount, categoryOut, categoryIn;
+            if (remain < 0) {
+                amount = valueArr[j];
+                categoryOut = this.getByValue(result, valueArr[i]);
+                categoryIn = this.getByValue(result, valueArr[j]);
+            } else if (remain > 0) {
+                amount = valueArr[i];
+                categoryOut = this.getByValue(result, valueArr[i]);
+                categoryIn = this.getByValue(result, valueArr[j]);
+            } else {
+                amount = valueArr[i];
+                categoryOut = this.getByValue(result, valueArr[i]);
+                categoryIn = this.getByValue(result, valueArr[j]);
+            }
+            if (amount !== 0 || categoryOut.localeCompare(categoryIn) !== 0) message.push(`Transfer ${Math.abs(amount)} from ${categoryOut} to ${categoryIn}.`);
+            message.push(<br />);
+            message.push(<br />);
+            this.toPrint(message)
+            if (remain < 0) {
+                valueArr[i] = remain;
+                valueArr[j] = 0
+                result[categoryOut] = remain;
+                result[categoryIn] = 0;
+            } else if (remain > 0) {
+                valueArr[j] = remain;
+                valueArr[i] = 0
+                result[categoryIn] = remain;
+                result[categoryOut] = 0;
+            } else {
+                valueArr[i] = 0;
+                valueArr[j] = 0;
+                result[categoryOut] = 0;
+                result[categoryIn] = 0
+            }
+        }
+    }
+
+    getByValue(result, searchValue) {
+        for (let [key, value] of Object.entries(result)) {
+            if (value === searchValue)
+                return key;
+        }
+    }
+
+    toPrint(message) {
+        this.setState({
+            displaymessage: message,
+        })
+    }
+
     update(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
