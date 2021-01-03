@@ -145,6 +145,25 @@ class PersonalizedPortfolio extends React.Component {
             this.setState({ [field]: e.currentTarget.value });
         }
     }
+
+    renderMessage() {
+        // let newAmount = this.state.amount ? this.state.amount : '';
+        // let newCategoryOut = this.state.categoryOut ? this.state.categoryOut : '';
+        // let newCategoryIn = this.state.categoryIn ? this.state.categoryIn : '';
+        let newMessage = this.state.displaymessage ? this.state.displaymessage : [];
+        //if (newAmount) {
+        return (
+            <div>
+                {/* {`Transfer ${newAmount} from ${newCategoryOut} to ${newCategoryIn}`} */}
+                {newMessage}
+            </div>
+        )
+        // } else {
+        //     debugger
+        //     return null;
+        // }
+    }
+
     render() {
         return (
             <div>
