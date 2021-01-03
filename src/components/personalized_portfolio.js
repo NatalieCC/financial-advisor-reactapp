@@ -259,14 +259,13 @@ class PersonalizedPortfolio extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table style={{ width: "30%", textAlign: 'center' }}>
+                    <table style={{ width: "30%" }}>
                         <thead>
                             <tr>
                                 <th style={{ textAlign: 'center' }}>Recommended Transfers</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <br />
                             <div class='message-content'>{this.renderMessage()}</div>
                         </tbody>
                     </table>

@@ -214,5 +214,9 @@ html, body, ul, p, h3, button {
     display: flex;
 }
 .message-content {
-    height: 184px;
+    height: 208px;
+    text-align: center;
+    justify-content: center;
+    max-height: 208px;
+    padding-top: 18px;
 }
