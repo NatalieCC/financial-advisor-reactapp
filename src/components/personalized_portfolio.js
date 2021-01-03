@@ -267,7 +267,7 @@ class PersonalizedPortfolio extends React.Component {
                         </thead>
                         <tbody>
                             <br />
-                            {this.renderMessage()}
+                            <div class='message-content'>{this.renderMessage()}</div>
                         </tbody>
                     </table>
                 </div>
