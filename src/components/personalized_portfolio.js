@@ -16,14 +16,12 @@ class PersonalizedPortfolio extends React.Component {
             midcapChosen: this.props.history.location.state.mid,
             foreignChosen: this.props.history.location.state.foreign,
             smallcapChosen: this.props.history.location.state.small,
-            differenceObj: { bondsDiff: '', largecapDiff: '', midcapDiff: '', foreignDiff: '', smallcapDiff: '' },
             newamountObj: { newBonds: '', newLargecap: '', newMidcap: '', newForeign: '', newSmallcap: '' },
         }
         this.calculate = this.calculate.bind(this);
         this.update = this.update.bind(this);
     }
     displayRiskInfo() {
-        //debugger
         return (
             <tr style={{ textAlign: 'center' }}>
                 <td>{this.state.bondsChosen}</td>
@@ -34,7 +32,6 @@ class PersonalizedPortfolio extends React.Component {
             </tr>
         )
     }
-
 
     calculate() {
         let sum = parseFloat(this.state.bondsInput) + parseFloat(this.state.largecapInput) + parseFloat(this.state.midcapInput) + parseFloat(this.state.foreignInput) + parseFloat(this.state.smallcapInput)
@@ -89,80 +86,6 @@ class PersonalizedPortfolio extends React.Component {
                     </tbody>
                 </table>
                 <h5 class='risk-label-select'>Please Enter Your Current Portfolio</h5>
-                <table>
-                    <thead class="risk-calculator-input-labels">
-                        <tr>
-                            <th></th>
-                            <th>Current Amount</th>
-                            <th>Difference</th>
-                            <th>New Amount</th>
-                            {/* <th>Recommended Transfers</th> */}
-                        </tr>
-                    </thead>
-                    <tbody class="risk-calculator-main">
-                        <tr class="risk-calculator-main-row">
-                            <td>Bonds $:</td>
-                            <div class="risk-calculator-main-row-box">
-                                <input class="risk-calculator-main-input"
-                                    input="text"
-                                    value={this.state.bondsInput}
-                                    onChange={this.update('bondsInput')}
-                                />
-                            </div>
-                            <th class="risk-calculator-main-difference">{this.state.differenceObj.bondsDiff}</th>
-                            <th class="risk-calculator-main-new">{this.state.newamountObj.newBonds}</th>
-                        </tr>
-                        <tr class="risk-calculator-main-row">
-                            <td>Large Cap $:</td>
-                            <div class="risk-calculator-main-row-box">
-                                <input class="risk-calculator-main-input"
-                                    input="text"
-                                    value={this.state.largecapInput}
-                                    onChange={this.update('largecapInput')}
-                                />
-                            </div>
-                            <th class="risk-calculator-main-difference">{this.state.differenceObj.largecapDiff}</th>
-                            <th class="risk-calculator-main-new">{this.state.newamountObj.newLargecap}</th>
-                        </tr>
-                        <tr class="risk-calculator-main-row">
-                            <td>Mid Cap $:</td>
-                            <div class="risk-calculator-main-row-box">
-                                <input class="risk-calculator-main-input"
-                                    input="text"
-                                    value={this.state.minInput}
-                                    onChange={this.update('midcapInput')}
-                                />
-                            </div>
-                            <th class="risk-calculator-main-difference">{this.state.differenceObj.midcapDiff}</th>
-                            <th class="risk-calculator-main-new">{this.state.newamountObj.newMidcap}</th>
-                        </tr>
-                        <tr class="risk-calculator-main-row">
-                            <td>Foreign $:</td>
-                            <div class="risk-calculator-main-row-box">
-                                <input class="risk-calculator-main-input"
-                                    input="text"
-                                    value={this.state.foreignInput}
-                                    onChange={this.update('foreignInput')}
-                                />
-                            </div>
-                            <th class="risk-calculator-main-difference">{this.state.differenceObj.foreignDiff}</th>
-                            <th class="risk-calculator-main-new">{this.state.newamountObj.newForeign}</th>
-                        </tr>
-                        <tr class="risk-calculator-main-row">
-                            <td>Small Cap $:</td>
-                            <div class="risk-calculator-main-row-box">
-                                <input class="risk-calculator-main-input"
-                                    input="text"
-                                    value={this.state.smallInput}
-                                    onChange={this.update('smallcapInput')}
-                                />
-                            </div>
-                            <th class="risk-calculator-main-difference">{this.state.differenceObj.smallcapDiff}</th>
-                            <th class="risk-calculator-main-new">{this.state.newamountObj.newSmallcap}</th>
-                        </tr>
-                    </tbody>
-                    <div></div>
-                </table>
                 <Button onClick={this.calculate} id='reba-bt'>Rebalance</Button>
             </div>
         )
