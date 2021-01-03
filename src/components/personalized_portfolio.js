@@ -22,7 +22,12 @@ class PersonalizedPortfolio extends React.Component {
         }
         this.calculate = this.calculate.bind(this);
         this.update = this.update.bind(this);
+        this.displayMessage = this.displayMessage.bind(this);
+        this.getByValue = this.getByValue.bind(this);
+        this.toPrint = this.toPrint.bind(this);
+        this.renderMessage = this.renderMessage.bind(this);
     }
+
     displayRiskInfo() {
         return (
             <tr style={{ textAlign: 'center' }}>
