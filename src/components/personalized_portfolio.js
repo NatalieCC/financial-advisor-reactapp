@@ -105,6 +105,7 @@ class PersonalizedPortfolio extends React.Component {
                 categoryIn = this.getByValue(result, valueArr[j]);
             }
             if (amount !== 0 || categoryOut.localeCompare(categoryIn) !== 0) message.push(`Transfer ${Math.abs(amount)} from ${categoryOut} to ${categoryIn}.`);
+            if (amount !== 0 && categoryOut.localeCompare(categoryIn) !== 0) message.push(`Transfer ${Math.abs(amount)} from ${categoryOut} to ${categoryIn}.`);
             message.push(<br />);
             message.push(<br />);
             this.toPrint(message)
