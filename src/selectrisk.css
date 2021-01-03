@@ -210,4 +210,6 @@ html, body, ul, p, h3, button {
 .risk-calculator-main-new {
     text-align: left;
 }
+.table-container{
+    display: flex;
 }
