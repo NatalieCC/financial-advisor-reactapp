@@ -203,6 +203,8 @@ html, body, ul, p, h3, button {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
+    width: 80%;
+    margin-left: 2.5px;
 }
 .risk-calculator-main-difference {
     text-align: left;
