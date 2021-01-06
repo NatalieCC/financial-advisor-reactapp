@@ -82,47 +82,74 @@ html, body, ul, p, h3, button {
 .risk-label-levels {
     display: flex;
     flex-direction: row;
-    font-size: 18px;
+    font-size: 1rem;
     justify-content: space-between;
-    margin-right: 50px;
-    margin-left: -50px;
+    width: 80%;
 }
-.risk-label {
-    display: flex;
-    margin-right: 96px;
+.risk-label-left {
+    /* align-items: flex-start; */
     margin-bottom: 5px;
     margin-top: 5px;
-}
-#buttons-container {
+    margin-left: 23%;
+} 
+.risk-label-right {
+    /* align-items: flex-start; */
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 19%;
+} 
+.buttons-container {
     display: flex;
-    margin-right: 100px;
+    width: 100%;
+    flex-direction: column;
+    height: 20%;
+    justify-content: center;
+}
+.bt-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.button-group {
+    /* position: absolute; */
+    flex-grow: 0 !important;
+    margin-left: -3%;
+}
+.nav-buttons{
+    /* position: absolute; */
+    display: inline-flex;
+    margin-left: 1%;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
 }
 #risk-selector {
     display: inherit;
-    height: 60px;
-    width: 620px;
+    height: 70%;
+    /* width: 620px; */
     align-self: center;
 }
 #risk-selector ul {
     display: inherit;
-    width: 620px;
+    /* width: 80%; */
 }
 #risk-selector button {
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 56px;
-    width: 62px;
+    height: 6vh;
+    width: 4.5vw;
     color: black;
     border: 2px solid black;
     border-radius: 5px;
     margin: 2px;
-    font-size: 27px;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
 }
 #continue {
+    float: left;
     margin-top: 4px;
     background-color: grey;
     display: flex;
@@ -132,11 +159,10 @@ html, body, ul, p, h3, button {
     color: f7e4e1;
     border: 2px solid black;
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     opacity: 0.4;
-    margin-left: 9.5%;
 }
 #graphic {
     position: relative;
@@ -149,25 +175,28 @@ html, body, ul, p, h3, button {
     width: 720px;
 }
 #toDonutBt{
-    display: flex;
+    float: left;
     justify-content: center;
     align-items: center;
     align-self: center;
-    /* color:rgb(245, 229, 229); */
+    text-align: center;
     border: 2px solid black;
     border-radius: 5px;
-    width: 62px;
-    height:56px;
-    font-size: 11px;
-    font-weight: 600;
-    /* background-color:gray; */
+    width: 28%;
+    height:50%;
+    font-size: 10%;
+    font-weight: 800;
+    margin: 0 auto;
+    padding: 0;
     cursor: pointer;
-    margin-left: 2.5%;
+    margin-left: 9%;
+    margin-bottom: 5%;
 }
 #back{
-    margin-left: 100px;
+    float: left !important;
     border: 2px solid black;
     border-radius: 5px;
+    margin-left: 1%;
 }
 #donutChart {
     width: 70%;

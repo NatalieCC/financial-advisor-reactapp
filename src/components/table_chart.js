@@ -104,30 +104,34 @@ class TableChart extends React.Component {
                     <div id='risk-selector-container'>
                         <div class='risk-selector-header-labels'>
                             <h5 class='risk-label-select'>Please Select A Risk Level For Your Investment Portfolio</h5>
-                            <div class='risk-label-levels'>
-                                <div class="risk-label">Low</div>
-                                <div class="risk-label">High</div>
-                            </div>
                         </div>
-                        <div id='buttons-container'>
-                            <ButtonGroup onClick={this.getButtonInfo} >
-                                <div id='risk-selector'>
-                                    <ul class='risk-selector-ul'>
-                                        <Button>1</Button>
-                                        <Button>2</Button>
-                                        <Button>3</Button>
-                                        <Button>4</Button>
-                                        <Button>5</Button>
-                                        <Button>6</Button>
-                                        <Button>7</Button>
-                                        <Button>8</Button>
-                                        <Button>9</Button>
-                                        <Button>10</Button>
-                                    </ul>
+                        <div class='buttons-container'>
+                            <div class='risk-label-levels'>
+                                <div class="risk-label-left">Low</div>
+                                <div class="risk-label-right">High</div>
+                            </div>
+                            <div class='bt-wrapper'>
+                                <ButtonGroup onClick={this.getButtonInfo} class='button-group'>
+                                    <div id='risk-selector'>
+                                        <ul class='risk-selector-ul'>
+                                            <Button>1</Button>
+                                            <Button>2</Button>
+                                            <Button>3</Button>
+                                            <Button>4</Button>
+                                            <Button>5</Button>
+                                            <Button>6</Button>
+                                            <Button>7</Button>
+                                            <Button>8</Button>
+                                            <Button>9</Button>
+                                            <Button>10</Button>
+                                        </ul>
+                                    </div>
+                                </ButtonGroup>
+                                <div class='nav-buttons'>
+                                    <Button id='continue' onClick={this.sendInfo}>Continue</Button>
+                                    <Button onClick={this.showDonutChart} color={Colors.ALERT} id='toDonutBt'>View in Donut Chart</Button>
                                 </div>
-                            </ButtonGroup>
-                            <Button id='continue' onClick={this.sendInfo}>Continue</Button>
-                            <Button onClick={this.showDonutChart} color={Colors.ALERT} id='toDonutBt'>View in Donut Chart</Button>
+                            </div>
                         </div>
                         <table>
                             <tbody>
