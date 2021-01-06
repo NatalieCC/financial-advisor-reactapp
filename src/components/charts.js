@@ -56,14 +56,14 @@ class Charts extends React.Component {
                     <Callout color={Colors.ALERT}>
                         <h1 id='app-title'>Financial Advisor</h1>
                     </Callout>
-                    <div id='risk-selector-container'>
-                        <div class='buttons-container'>
+                    <div class='risk-selector-container'>
+                        <div class='donut-buttons-container'>
                             <ButtonGroup onClick={(e) => {
                                 this.setState({ buttonClicked: e.target.innerText })
                                 return (
                                     this.props.onChangeChart(e.target.innerText)
                                 )
-                            }} >
+                            }} id='donut-button-group'>
                                 <div id='risk-selector'>
                                     <ul class='risk-selector-ul'>
                                         <Button>1</Button>
@@ -79,8 +79,10 @@ class Charts extends React.Component {
                                     </ul>
                                 </div>
                             </ButtonGroup>
-                            <Button id='continue' onClick={this.sendInfo} >Continue</Button>
-                            <Button id='back' onClick={this.goBack}>Back to Table</Button>
+                            <div class='bt-wrapper'>
+                                <Button id='donut-continue' onClick={this.sendInfo} >Continue</Button>
+                                <Button id='back' onClick={this.goBack}>Back to Table</Button>
+                            </div>
                         </div>
                     </div>
                     <div id='donutChart'>
