@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
 import { withRouter } from 'react-router-dom';
+import '../stylesheets/personalized_portfolio.css'
 
 class PersonalizedPortfolio extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class PersonalizedPortfolio extends React.Component {
         this.getByValue = this.getByValue.bind(this);
         this.toPrint = this.toPrint.bind(this);
         this.renderMessage = this.renderMessage.bind(this);
+        //this.onKeyPress.bind(this);
     }
 
     displayRiskInfo() {
@@ -69,7 +71,9 @@ class PersonalizedPortfolio extends React.Component {
         this.displayMessage(diff);
     }
 
-    displayMessage(diff) {
+    displayMessage(diff) {// Sort differenceObj by its values(min -> max); using two pointers on the values array.i at index 0 and j at last index.
+        // the transfer amount is the smaller number when comparing the absolute value of array[i] and array[j];
+        // negative number's category transfers out(the category is the key of differenceObj); to positive number's category. 
         let message = [];
         let differenceObj = diff;
         let result = {};
@@ -155,7 +159,7 @@ class PersonalizedPortfolio extends React.Component {
         return (
             <div>
                 {/* {`Transfer ${newAmount} from ${newCategoryOut} to ${newCategoryIn}`} */}
-                {newMessage}
+                <div id='content'>{newMessage}</div>
             </div>
         )
         // } else {
@@ -164,13 +168,20 @@ class PersonalizedPortfolio extends React.Component {
         // }
     }
 
+    // onKeyPress(event) { //To stop typing, use onKeyPress not onChange 
+    //     const keyCode = event.keyCode || event.which;  //Since keyPress handler is triggered before onChange, you have to check the pressed key (event.keyCode), NOT the current value of input (event.target.value)
+    //     const keyValue = String.fromCharCode(keyCode);
+    //     if (/\+|-/.test(keyValue))
+    //         event.preventDefault(); //using event.p inside onKeyPress means stop the pressing event.
+    // }
+
     render() {
         return (
             <div>
                 <Callout color={Colors.ALERT}>
                     <h1 id='app-title'>Financial Advisor</h1>
                 </Callout>
-                <h4 class='risk-label-select'>Personalized Portfolio</h4>
+                <h4 className='risk-label-select'>Personalized Portfolio</h4>
                 <table>
                     <thead>
                         <tr>
@@ -185,10 +196,10 @@ class PersonalizedPortfolio extends React.Component {
                         {this.displayRiskInfo()}
                     </tbody>
                 </table>
-                <h5 class='risk-label-select'>Please Enter Your Current Portfolio</h5>
-                <div class='table-container'>
+                <h5 className='risk-label-select'>Please Enter Your Current Portfolio</h5>
+                <div className='table-container'>
                     <table style={{ width: "70%" }}>
-                        <thead class="risk-calculator-input-labels">
+                        <thead className="risk-calculator-input-labels">
                             <tr>
                                 <th></th>
                                 <th>Current Amount</th>
@@ -196,71 +207,71 @@ class PersonalizedPortfolio extends React.Component {
                                 <th>New Amount</th>
                             </tr>
                         </thead>
-                        <tbody class="risk-calculator-main">
-                            <tr class="risk-calculator-main-row">
+                        <tbody className="risk-calculator-main">
+                            <tr className="risk-calculator-main-row">
                                 <td>Bonds $:</td>
-                                <div class="risk-calculator-main-row-box">
-                                    <input class="risk-calculator-main-input"
+                                <div className="risk-calculator-main-row-box">
+                                    <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
                                         value={this.state.bondsInput}
                                         onChange={this.update('bondsInput')}
                                     />
                                 </div>
-                                <th class="risk-calculator-main-difference">{this.state.differenceObj.Bonds}</th>
-                                <th class="risk-calculator-main-new">{this.state.newamountObj.newBonds}</th>
+                                <th className="risk-calculator-main-difference">{this.state.differenceObj.Bonds}</th>
+                                <th className="risk-calculator-main-new">{this.state.newamountObj.newBonds}</th>
                             </tr>
-                            <tr class="risk-calculator-main-row">
+                            <tr className="risk-calculator-main-row">
                                 <td>Large Cap $:</td>
-                                <div class="risk-calculator-main-row-box">
-                                    <input class="risk-calculator-main-input"
+                                <div className="risk-calculator-main-row-box">
+                                    <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
                                         value={this.state.largecapInput}
                                         onChange={this.update('largecapInput')}
                                     />
                                 </div>
-                                <th class="risk-calculator-main-difference">{this.state.differenceObj.Largecap}</th>
-                                <th class="risk-calculator-main-new">{this.state.newamountObj.newLargecap}</th>
+                                <th className="risk-calculator-main-difference">{this.state.differenceObj.Largecap}</th>
+                                <th className="risk-calculator-main-new">{this.state.newamountObj.newLargecap}</th>
                             </tr>
-                            <tr class="risk-calculator-main-row">
+                            <tr className="risk-calculator-main-row">
                                 <td>Mid Cap $:</td>
-                                <div class="risk-calculator-main-row-box">
-                                    <input class="risk-calculator-main-input"
+                                <div className="risk-calculator-main-row-box">
+                                    <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
                                         value={this.state.minInput}
                                         onChange={this.update('midcapInput')}
                                     />
                                 </div>
-                                <th class="risk-calculator-main-difference">{this.state.differenceObj.Midcap}</th>
-                                <th class="risk-calculator-main-new">{this.state.newamountObj.newMidcap}</th>
+                                <th className="risk-calculator-main-difference">{this.state.differenceObj.Midcap}</th>
+                                <th className="risk-calculator-main-new">{this.state.newamountObj.newMidcap}</th>
                             </tr>
-                            <tr class="risk-calculator-main-row">
+                            <tr className="risk-calculator-main-row">
                                 <td>Foreign $:</td>
-                                <div class="risk-calculator-main-row-box">
-                                    <input class="risk-calculator-main-input"
+                                <div className="risk-calculator-main-row-box">
+                                    <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
                                         value={this.state.foreignInput}
                                         onChange={this.update('foreignInput')}
                                     />
                                 </div>
-                                <th class="risk-calculator-main-difference">{this.state.differenceObj.Foreign}</th>
-                                <th class="risk-calculator-main-new">{this.state.newamountObj.newForeign}</th>
+                                <th className="risk-calculator-main-difference">{this.state.differenceObj.Foreign}</th>
+                                <th className="risk-calculator-main-new">{this.state.newamountObj.newForeign}</th>
                             </tr>
-                            <tr class="risk-calculator-main-row">
+                            <tr className="risk-calculator-main-row">
                                 <td>Small Cap $:</td>
-                                <div class="risk-calculator-main-row-box">
-                                    <input class="risk-calculator-main-input"
+                                <div className="risk-calculator-main-row-box">
+                                    <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
                                         value={this.state.smallInput}
                                         onChange={this.update('smallcapInput')}
                                     />
                                 </div>
-                                <th class="risk-calculator-main-difference">{this.state.differenceObj.Smallcap}</th>
-                                <th class="risk-calculator-main-new">{this.state.newamountObj.newSmallcap}</th>
+                                <th className="risk-calculator-main-difference">{this.state.differenceObj.Smallcap}</th>
+                                <th className="risk-calculator-main-new">{this.state.newamountObj.newSmallcap}</th>
                             </tr>
                         </tbody>
                     </table>
@@ -271,7 +282,7 @@ class PersonalizedPortfolio extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <div class='message-content'>{this.renderMessage()}</div>
+                            <div className='message-content'>{this.renderMessage()}</div>
                         </tbody>
                     </table>
                 </div>
