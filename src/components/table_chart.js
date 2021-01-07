@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
-import '../../src/selectrisk.css';
+import '../stylesheets/selectrisk.css';
 import { withRouter } from 'react-router-dom';
 import ChartsContainer from './charts_container';
 import PersonalizedPortfolio from './personalized_portfolio';
@@ -102,18 +102,18 @@ class TableChart extends React.Component {
                         <h1 id='app-title'>Financial Advisor</h1>
                     </Callout>
                     <div id='risk-selector-container'>
-                        <div class='risk-selector-header-labels'>
-                            <h5 class='risk-label-select'>Please Select A Risk Level For Your Investment Portfolio</h5>
+                        <div className='risk-selector-header-labels'>
+                            <h5 className='risk-label-select'>Please Select A Risk Level For Your Investment Portfolio</h5>
                         </div>
-                        <div class='buttons-container'>
-                            <div class='bt-wrapper'>
-                                <ButtonGroup onClick={this.getButtonInfo} class='button-group'>
+                        <div className='buttons-container'>
+                            <div className='bt-wrapper'>
+                                <ButtonGroup onClick={this.getButtonInfo} className='button-group'>
                                     <div id='risk-selector'>
-                                        <div class='risk-label-levels'>
-                                            <div class="risk-label-left">Low</div>
-                                            <div class="risk-label-right">High</div>
+                                        <div className='risk-label-levels'>
+                                            <div className="risk-label-left">Low</div>
+                                            <div className="risk-label-right">High</div>
                                         </div>
-                                        <ul class='risk-selector-ul'>
+                                        <ul className='risk-selector-ul'>
                                             <Button>1</Button>
                                             <Button>2</Button>
                                             <Button>3</Button>
@@ -127,7 +127,7 @@ class TableChart extends React.Component {
                                         </ul>
                                     </div>
                                 </ButtonGroup>
-                                <div class='nav-buttons'>
+                                <div className='nav-buttons'>
                                     <Button id='continue' onClick={this.sendInfo} disabled={!this.state.buttonClicked}>Continue</Button>
                                     <Button onClick={this.showDonutChart} color={Colors.ALERT} id='toDonutBt'>View in Donut Chart</Button>
                                 </div>

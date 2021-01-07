@@ -1,0 +1,86 @@
+#reba-bt{
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.risk-calculator-main-row {
+    position: relative;
+    /* align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    vertical-align: middle; */
+}
+.risk-calculator-main-row-box {
+    position: absolute;
+}
+.risk-calculator-main-row input:nth-child(1) {
+    -webkit-animation: pulse 0.7s;
+    -webkit-animation-iteration-count: 3;
+    animation: pulse 0.7s;
+    animation-iteration-count: 3;
+    outline: 0;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    width: 70%;
+    margin-left: 5%;
+}
+.risk-calculator-main-difference {
+    text-align: left;
+}
+.risk-calculator-main-new {
+    text-align: left;
+}
+.table-container{
+    display: flex;
+}
+.message-content {
+    position: relative;
+    height: 210px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 18px;
+}
+
+.donut-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center !important;
+}
+#donut-continue {
+    float: left;
+    margin-top: 1px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: f7e4e1;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.4;
+    margin-left: 1%;
+}
+#donut-button-group{
+    margin-bottom: 0px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#content{
+    position: absolute;
+    max-height: 208px;
+}
+
+@media only screen and (max-width: 1100px) {
+  #content {
+    font-size: 12.5px;
+  }
+}
