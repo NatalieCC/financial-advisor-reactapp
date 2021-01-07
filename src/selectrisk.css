@@ -16,39 +16,11 @@ html, body, ul, p, h3, button {
     font-family: "Roboto", sans-serif;
     border: none;
 }
+
 .bk {
     background-color: rgb(240, 240, 133) !important; 
 }
-/* #buttons {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.flex {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-between; 
-}
 
-.flex-child {
-    -webkit-box-flex: 1 1 auto;
-    -moz-box-flex:  1 1 auto;
-    -webkit-flex:  1 1 auto;
-    -ms-flex:  1 1 auto;
-    flex:  1 1 auto;
-    margin-left:31.5%;
-}
-.flex-child2 {
-    -webkit-box-flex: 1 1 auto;
-    -moz-box-flex:  1 1 auto;
-    -webkit-flex:  1 1 auto;
-    -ms-flex:  1 1 auto;
-    flex:  1 1 auto;  
-} */
 #app-title {
     font-size: 55px;
     display: flex;
@@ -57,7 +29,6 @@ html, body, ul, p, h3, button {
     text-align: center;
     color:#f7e4e1;
     font-family: "Roboto", sans-serif;
-    /* background-color:grey; */
     background-color: #e9bcb7;
     background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
 }
@@ -84,19 +55,15 @@ html, body, ul, p, h3, button {
     flex-direction: row;
     font-size: 1rem;
     justify-content: space-between;
-    width: 80%;
+    margin-left: 3%;
 }
 .risk-label-left {
-    /* align-items: flex-start; */
     margin-bottom: 5px;
     margin-top: 5px;
-    margin-left: 23%;
 } 
 .risk-label-right {
-    /* align-items: flex-start; */
     margin-bottom: 5px;
     margin-top: 5px;
-    margin-right: 19%;
 } 
 .buttons-container {
     display: flex;
@@ -111,12 +78,11 @@ html, body, ul, p, h3, button {
     justify-content: center;
 }
 .button-group {
-    /* position: absolute; */
     flex-grow: 0 !important;
     margin-left: -3%;
+    display: inline !important;
 }
 .nav-buttons{
-    /* position: absolute; */
     display: inline-flex;
     margin-left: 1%;
     justify-content: center;
@@ -124,14 +90,13 @@ html, body, ul, p, h3, button {
     vertical-align: center;
 }
 #risk-selector {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
     height: 70%;
-    /* width: 620px; */
     align-self: center;
 }
 #risk-selector ul {
     display: inherit;
-    /* width: 80%; */
 }
 #risk-selector button {
     background-color: white;
@@ -150,7 +115,7 @@ html, body, ul, p, h3, button {
 }
 #continue {
     float: left;
-    margin-top: 4px;
+    margin-top: 13px;
     background-color: grey;
     display: flex;
     justify-content: center;
@@ -255,7 +220,6 @@ html, body, ul, p, h3, button {
     padding-top: 18px;
 }
 
-
 .donut-buttons-container{
     display: flex;
     flex-direction: row;
@@ -264,7 +228,7 @@ html, body, ul, p, h3, button {
 }
 #donut-continue {
     float: left;
-    margin-top: 4px;
+    margin-top: 1px;
     background-color: grey;
     display: flex;
     justify-content: center;

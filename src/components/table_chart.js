@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
 import '../../src/selectrisk.css';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import ChartsContainer from './charts_container';
 import PersonalizedPortfolio from './personalized_portfolio';
 
@@ -106,13 +106,13 @@ class TableChart extends React.Component {
                             <h5 class='risk-label-select'>Please Select A Risk Level For Your Investment Portfolio</h5>
                         </div>
                         <div class='buttons-container'>
-                            <div class='risk-label-levels'>
-                                <div class="risk-label-left">Low</div>
-                                <div class="risk-label-right">High</div>
-                            </div>
                             <div class='bt-wrapper'>
                                 <ButtonGroup onClick={this.getButtonInfo} class='button-group'>
                                     <div id='risk-selector'>
+                                        <div class='risk-label-levels'>
+                                            <div class="risk-label-left">Low</div>
+                                            <div class="risk-label-right">High</div>
+                                        </div>
                                         <ul class='risk-selector-ul'>
                                             <Button>1</Button>
                                             <Button>2</Button>
