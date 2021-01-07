@@ -80,7 +80,7 @@ class Charts extends React.Component {
                                 </div>
                             </ButtonGroup>
                             <div class='bt-wrapper'>
-                                <Button id='donut-continue' onClick={this.sendInfo} >Continue</Button>
+                                <Button id='donut-continue' onClick={this.sendInfo} disabled={!this.state.buttonClicked}>Continue</Button>
                                 <Button id='back' onClick={this.goBack}>Back to Table</Button>
                             </div>
                         </div>
