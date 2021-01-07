@@ -128,7 +128,7 @@ class TableChart extends React.Component {
                                     </div>
                                 </ButtonGroup>
                                 <div class='nav-buttons'>
-                                    <Button id='continue' onClick={this.sendInfo}>Continue</Button>
+                                    <Button id='continue' onClick={this.sendInfo} disabled={!this.state.buttonClicked}>Continue</Button>
                                     <Button onClick={this.showDonutChart} color={Colors.ALERT} id='toDonutBt'>View in Donut Chart</Button>
                                 </div>
                             </div>
