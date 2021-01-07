@@ -202,6 +202,7 @@ class PersonalizedPortfolio extends React.Component {
                                 <div class="risk-calculator-main-row-box">
                                     <input class="risk-calculator-main-input"
                                         input="text"
+                                        type="number"
                                         value={this.state.bondsInput}
                                         onChange={this.update('bondsInput')}
                                     />
@@ -214,6 +215,7 @@ class PersonalizedPortfolio extends React.Component {
                                 <div class="risk-calculator-main-row-box">
                                     <input class="risk-calculator-main-input"
                                         input="text"
+                                        type="number"
                                         value={this.state.largecapInput}
                                         onChange={this.update('largecapInput')}
                                     />
@@ -226,6 +228,7 @@ class PersonalizedPortfolio extends React.Component {
                                 <div class="risk-calculator-main-row-box">
                                     <input class="risk-calculator-main-input"
                                         input="text"
+                                        type="number"
                                         value={this.state.minInput}
                                         onChange={this.update('midcapInput')}
                                     />
@@ -238,6 +241,7 @@ class PersonalizedPortfolio extends React.Component {
                                 <div class="risk-calculator-main-row-box">
                                     <input class="risk-calculator-main-input"
                                         input="text"
+                                        type="number"
                                         value={this.state.foreignInput}
                                         onChange={this.update('foreignInput')}
                                     />
@@ -250,6 +254,7 @@ class PersonalizedPortfolio extends React.Component {
                                 <div class="risk-calculator-main-row-box">
                                     <input class="risk-calculator-main-input"
                                         input="text"
+                                        type="number"
                                         value={this.state.smallInput}
                                         onChange={this.update('smallcapInput')}
                                     />
