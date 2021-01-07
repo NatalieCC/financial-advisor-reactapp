@@ -56,8 +56,8 @@ class Charts extends React.Component {
                     <Callout color={Colors.ALERT}>
                         <h1 id='app-title'>Financial Advisor</h1>
                     </Callout>
-                    <div class='risk-selector-container'>
-                        <div class='donut-buttons-container'>
+                    <div className='risk-selector-container'>
+                        <div className='donut-buttons-container'>
                             <ButtonGroup onClick={(e) => {
                                 this.setState({ buttonClicked: e.target.innerText })
                                 return (
@@ -65,7 +65,7 @@ class Charts extends React.Component {
                                 )
                             }} id='donut-button-group'>
                                 <div id='risk-selector'>
-                                    <ul class='risk-selector-ul'>
+                                    <ul className='risk-selector-ul'>
                                         <Button>1</Button>
                                         <Button>2</Button>
                                         <Button>3</Button>
@@ -79,7 +79,7 @@ class Charts extends React.Component {
                                     </ul>
                                 </div>
                             </ButtonGroup>
-                            <div class='bt-wrapper'>
+                            <div className='bt-wrapper'>
                                 <Button id='donut-continue' onClick={this.sendInfo} disabled={!this.state.buttonClicked}>Continue</Button>
                                 <Button id='back' onClick={this.goBack}>Back to Table</Button>
                             </div>
@@ -87,7 +87,7 @@ class Charts extends React.Component {
                     </div>
                     <div id='donutChart'>
                         <DonutChart
-                            currentChart={this.props.currentChart - 1}
+                            currentChart={this.props.currentChart - 1} //the data is zero indexed and i am off by 1 on the index.
                         />
                     </div>
                 </div >
