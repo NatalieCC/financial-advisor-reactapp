@@ -201,8 +201,9 @@ html, body, ul, p, h3, button {
     margin-top:4px;
 }
 #donutChart {
-    width: 70%;
-    margin-left: 15%;
+    width: 100%;
+    justify-content: center;
+    /* margin-left: 15%; */
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
