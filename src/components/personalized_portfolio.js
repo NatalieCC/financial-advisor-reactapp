@@ -7,11 +7,11 @@ class PersonalizedPortfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bondsInput: '',
-            largecapInput: '',
-            midcapInput: '',
-            foreignInput: '',
-            smallcapInput: '',
+            bondsInput: 0,
+            largecapInput: 0,
+            midcapInput: 0,
+            foreignInput: 0,
+            smallcapInput: 0,
             bondsChosen: this.props.history.location.state.bonds,
             largecapChosen: this.props.history.location.state.large,
             midcapChosen: this.props.history.location.state.mid,
@@ -240,7 +240,7 @@ class PersonalizedPortfolio extends React.Component {
                                     <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
-                                        value={this.state.minInput}
+                                        value={this.state.midcapInput}
                                         onChange={this.update('midcapInput')}
                                     />
                                 </div>
@@ -266,7 +266,7 @@ class PersonalizedPortfolio extends React.Component {
                                     <input className="risk-calculator-main-input"
                                         input="text"
                                         type="number"
-                                        value={this.state.smallInput}
+                                        value={this.state.smallcapInput}
                                         onChange={this.update('smallcapInput')}
                                     />
                                 </div>
@@ -286,7 +286,7 @@ class PersonalizedPortfolio extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                <Button onClick={this.calculate} id='reba-bt'>Rebalance</Button>
+                <Button onClick={this.calculate} id='reba-bt' >Rebalance</Button>
             </div>
         )
     }
