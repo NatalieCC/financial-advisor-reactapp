@@ -44,7 +44,7 @@ class TableChart extends React.Component {
             //debugger
             let val = index + 1;
             return (
-                <tr id={`myDiv${val}`} style={{ textAlign: 'center' }}>
+                <tr key={index} id={`myDiv${val}`} style={{ textAlign: 'center' }}>
                     <td>{index + 1}</td>
                     <td>{obj["Bonds %"]}</td>
                     <td>{obj["Large Cap %"]}</td>
