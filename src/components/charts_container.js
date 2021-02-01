@@ -6,8 +6,7 @@ import { chartChange } from '../actions/donut_chart_actions';
 const mapStateToProps = (state, ownProps) => {
     //debugger
     return {
-        currentChart: state.currentChart,
-        //buttonClicked: ownProps.buttonClicked
+        currentChart: state.changeDonutchartReducer.currentChart
     };
 };
 
