@@ -3,7 +3,6 @@ import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
 import '../stylesheets/selectrisk.css';
 import { withRouter } from 'react-router-dom';
 import ChartsContainer from './charts_container';
-import PersonalizedPortfolio from './personalized_portfolio';
 
 class TableChart extends React.Component {
     constructor(props) {

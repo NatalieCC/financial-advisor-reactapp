@@ -1,5 +1,5 @@
 //import actions TYPE
-import { cachePortfolio, RECEIVE_PORTFOLIO } from '../actions/cache_portfolio_actions';
+import { RECEIVE_PORTFOLIO } from '../actions/cache_portfolio_actions';
 
 
 const cachePortfolioReducer = (state = {}, action) => {
