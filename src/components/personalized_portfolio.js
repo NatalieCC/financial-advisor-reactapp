@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, ButtonGroup, Callout, Colors } from 'react-foundation';
+import React from 'react';
+import { Button, Callout, Colors } from 'react-foundation';
 import { withRouter } from 'react-router-dom';
 import '../stylesheets/personalized_portfolio.css'
 
@@ -147,7 +147,29 @@ class PersonalizedPortfolio extends React.Component {
     update(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
+            //call action:
+            debugger
+            this.props.cachePortfolio(this.state);
+            //localStorage.setItem('bondsInput', this.state.bondsInput)
         }
+    }
+
+    componentDidMount() {
+        //if this.props.cacheportfolio from mstp setState with this
+        //debugger
+        if (this.props.cachePortfolio) {
+            //debugger
+            this.setState(this.props.cachedPortfolio)
+            // this.setState({
+            //     state: this.props.cachePortfolio
+            // })
+        }
+        //Below is for maintaining user input using localStorage.
+        // const inputBonds = localStorage.getItem('bondsInput'); 
+        // if (!inputBonds) {
+        // } else {
+        //     this.setState({ bondsInput: inputBonds })
+        // }
     }
 
     renderMessage() {
@@ -176,6 +198,7 @@ class PersonalizedPortfolio extends React.Component {
     // }
 
     render() {
+        const disabled = (!this.state.foreignInput || !this.state.largecapInput || !this.state.midcapInput || !this.state.smallcapInput || !this.state.bondsInput) ? "disabled" : "";
         return (
             <div>
                 <Callout color={Colors.ALERT}>
@@ -286,7 +309,7 @@ class PersonalizedPortfolio extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                <Button onClick={this.calculate} id='reba-bt' >Rebalance</Button>
+                <Button onClick={this.calculate} id='reba-bt' disabled={`${disabled}`} >Rebalance</Button>
             </div>
         )
     }
