@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import TableChart from './components/table_chart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import PersonalizedPortfolio from './components/personalized_portfolio';
+import PersonalizedPortfolioContainer from './components/personalized_portfolio_container';
 //import ChartsContainer from '../src/components/charts_container';
 
 const App = () => (
@@ -10,7 +10,7 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={composeComponents(TableChart)} />
-        <Route path="/calculator" component={composeComponents(PersonalizedPortfolio)} />
+        <Route path="/calculator" component={composeComponents(PersonalizedPortfolioContainer)} />
       </Switch>
     </BrowserRouter>
   </div>
